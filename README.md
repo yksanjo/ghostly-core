@@ -1,64 +1,84 @@
-# Ghostly Core
+# ghostly-core
 
-> Minimal library for terminal memory storage and embedding layers.
+## Detailed Description
 
-Part of the Ghostly Memory Bank ecosystem - extracted core modules for reuse.
+ghostly-core is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-## Install
+## Problem Statement
+
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-npm install ghostly-core
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
 ## Usage
 
-```javascript
-import { initDatabase, insertEpisode, insertEmbedding, generateEmbedding } from 'ghostly-core';
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-// Initialize database
-await initDatabase('./data/ghostly.db');
+## Quality Standards
 
-// Initialize OpenAI
-import { initOpenAI } from 'ghostly-core';
-initOpenAI(process.env.OPENAI_API_KEY);
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-// Store an episode with embedding
-const episodeId = insertEpisode({
-  project_hash: 'abc123',
-  summary: 'npm build failed',
-  problem: 'Module not found',
-  fix: 'npm install',
-  keywords: 'npm,build,error'
-});
+## Security
 
-// Generate and store embedding
-const embedding = await generateEmbedding('npm build failed - Module not found');
-insertEmbedding(episodeId, 'text-embedding-ada-002', embedding);
-```
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-## API
+## Contributing
 
-### Database (`./database.js`)
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-- `initDatabase(dbPath)` - Initialize SQLite database
-- `insertEvent(event)` - Insert terminal event
-- `insertEpisode(episode)` - Insert episode
-- `getEpisodes(projectHash, limit)` - Get episodes for project
-- `searchEpisodes(query, limit)` - Search episodes
-- `insertEmbedding(episodeId, model, vector)` - Store embedding
-- `getEmbedding(episodeId)` - Get embedding
-- `upsertProject(project)` - Insert/update project
-- `getProject(projectHash)` - Get project
-- `getStats()` - Get statistics
+## Roadmap
 
-### Embedding (`./embedding.js`)
+Track upcoming milestones, technical debt, and planned feature work.
 
-- `initOpenAI(apiKey)` - Initialize OpenAI client
-- `generateEmbedding(text, model)` - Generate embedding
-- `generateEpisodeEmbedding(episode, model)` - Generate for episode
-- `cosineSimilarity(a, b)` - Calculate similarity
-- `commandSimilarity(cmd1, cmd2)` - Command similarity
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
