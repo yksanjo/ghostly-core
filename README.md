@@ -1,5 +1,12 @@
 # ghostly-core
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/ghostly-core/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/ghostly-core/actions)
+![License](https://img.shields.io/github/license/yksanjo/ghostly-core)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/ghostly-core)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/ghostly-core)
+
 ## Detailed Description
 
 ghostly-core is maintained as an industry-grade software project with production-ready engineering practices.  
